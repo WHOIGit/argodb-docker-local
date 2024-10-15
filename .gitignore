@@ -1,5 +1,4 @@
-argo-db-backend/
-bgc-processing/
 bgc-processing-data/
 testing-data/
 .DS_Store
+bgc-db.sql.gz

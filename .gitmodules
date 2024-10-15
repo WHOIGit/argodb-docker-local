@@ -1,0 +1,6 @@
+[submodule "argo-db-backend"]
+	path = argo-db-backend
+	url = https://github.com/boom-lab/argo-db-backend.git
+[submodule "bgc-processing"]
+	path = bgc-processing
+	url = https://github.com/boom-lab/bgc-processing.git

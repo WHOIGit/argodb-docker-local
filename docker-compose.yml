@@ -8,39 +8,42 @@ services:
       context: ./argo-db-backend
       dockerfile: ./compose/django/Dockerfile
     image: argodb_local
+    container_name: argodb
     depends_on:
       - postgres
     volumes:
       - ./argo-db-backend:/app
     env_file:
-      - ./argo-db-backend/.env
+      - ./argo-db-backend/.env.local
     ports:
       - "8000:8000"
     command: /start
-  
+
   postgres:
     build:
       context: ./argo-db-backend
       dockerfile: ./compose/postgres/Dockerfile
-    image: roundabout_production_postgres
+    image: argodb_postgres
+    container_name: postgres
     volumes:
       - local_postgres_data:/var/lib/postgresql/data
       - local_postgres_data_backups:/backups
     env_file:
-      - ./argo-db-backend/.env
+      - ./argo-db-backend/.env.local
     ports:
       - "5432:5432"
 
   bgc-processing:
-   build:
-     context: ./bgc-processing
-     dockerfile: ./Dockerfile
-   image: bgc_processing_local
-   depends_on: 
-     - argodb
-   volumes:
-     - ./bgc-processing:/app
-     - ./bgc-processing-data:/home/bgc_processing/bgc-processing/data
-     - ./testing-data:/home/testing-data
-   env_file:
-    - ./bgc-processing/.env.local
+    build:
+      context: ./bgc-processing
+      dockerfile: ./Dockerfile
+    image: bgc_processing_local
+    container_name: bgc-processing
+    depends_on:
+      - argodb
+    volumes:
+      - ./bgc-processing:/app
+      - ./bgc-processing-data:/home/bgc_processing/bgc-processing/data
+      - ./testing-data:/home/testing-data
+    env_file:
+      - ./bgc-processing/.env.local
