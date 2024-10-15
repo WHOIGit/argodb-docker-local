@@ -36,11 +36,12 @@ mkdir testing-data
 
 5. set up .env.local files for argo-db-backend/ and bgc-processing/. Copy the `.env.example` files
 6. build local docker images: `docker compose build`
-7. seed local database with real data (the `restore` command way take a few minutes):
+7. download example database file: [Download SQL file](https://whoi-my.sharepoint.com/:u:/g/personal/eandrews_whoi_edu/ETMqcrz1txtGuIA70uYhS_cBc1hlbGCPbyJI0TdlYb7SzA?e=o16Q80)
+8. seed local database with downloaded data (the `restore` command way take a few minutes):
 
 ```
 docker compose up -d postgres
-docker cp bgc-db.sql.gz postgres:backups/
+docker cp /local/path/to/file/bgc-db.sql.gz postgres:backups/
 docker compose exec postgres restore bgc-db.sql.gz
 docker compose down
 ```
