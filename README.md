@@ -34,7 +34,7 @@ mkdir testing-data
 - docker-compose.yml
 ```
 
-5. set up .env.local files for argo-db-backend/ and bgc-processing/. Copy the `.env.example` files
+5. create `.env.local` files for argo-db-backend/ and bgc-processing/ directories. Copy the `.env.example` file and rename to `.env.local` for each directory. Add values to the empty environmental variable for DB_PASSWORD/POSTGRES_PASSWORD
 6. build local docker images: `docker compose build`
 7. download example database file: [Download SQL file](https://whoi-my.sharepoint.com/:u:/g/personal/eandrews_whoi_edu/ETMqcrz1txtGuIA70uYhS_cBc1hlbGCPbyJI0TdlYb7SzA?e=o16Q80)
 8. seed local database with downloaded data (the `restore` command way take a few minutes):
