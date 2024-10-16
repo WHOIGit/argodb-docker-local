@@ -34,7 +34,7 @@ mkdir testing-data
 - docker-compose.yml
 ```
 
-5. create `.env.local` files for argo-db-backend/ and bgc-processing/ directories. Copy the `.env.example` file and rename to `.env.local` for each directory. Add values to the empty environmental variable for DB_PASSWORD/POSTGRES_PASSWORD
+5. create `.env.local` files for `argo-db-backend/` and `bgc-processing/` directories. Copy the `.env.example` file and rename to `.env.local` for each directory. Add values to the empty environmental variable for DB_PASSWORD/POSTGRES_PASSWORD
 6. build local docker images: `docker compose build`
 7. download example database file: [Download SQL file](https://whoi-my.sharepoint.com/:u:/g/personal/eandrews_whoi_edu/ETMqcrz1txtGuIA70uYhS_cBc1hlbGCPbyJI0TdlYb7SzA?e=o16Q80)
 8. seed local database with downloaded data (the `restore` command way take a few minutes):
@@ -56,6 +56,9 @@ This will start the Django application, the Postgres DB, and the BGC Processing 
 You can access the Django application at: `http://localhost:8000/metadata-admin/`. You can use your current login info from the production site.
 
 You can run Django management commands by executing `docker compose run --rm argodb python manage.py <command_name>`. All commands should be executed in the `argodb-docker-local` directory.
+
+For example, to add a new admin user to access the Django application, you can run:
+`docker compose run --rm argodb python manage.py createsuperuser`
 
 ## How to use the BGC Processing application
 
