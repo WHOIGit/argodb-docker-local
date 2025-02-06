@@ -73,9 +73,10 @@ For example, to add a new admin user to access the Django application, you can r
 
 ```
 
-2. The container will stop after the data parsing is complete. To run it again, simply start it up again:
-   `docker compose up bgc-processing`
+2. The container will continue to run after the data parsing is complete. To run the script again, execute the following command:
+   `docker compose exec bgc-processing conda run -n bgc_py python navis_batch_process.py`
 3. Data will be added to the local Django application as it's parsed. You can can verify the new data at `http://localhost:8000/metadata-admin/`
+4. To further debug the application, you can open an interactive shell session on the container by running: `docker exec -it bgc-processing bash`
 
 ## How to stop
 
