@@ -39,6 +39,7 @@ services:
       dockerfile: ./Dockerfile
     image: bgc_processing_local
     container_name: bgc-processing
+    tty: true
     depends_on:
       - argodb
     volumes:
