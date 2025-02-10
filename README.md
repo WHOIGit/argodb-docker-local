@@ -30,6 +30,9 @@ mkdir testing-data
 - argo-db-backend/
 - bgc-processing/
 - bgc-processing-data/
+   -- pjm/
+   -- matlab/
+   -- netCDF
 - testing-data/
 - docker-compose.yml
 ```
