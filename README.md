@@ -20,7 +20,7 @@ git submodule update
 5. create two new local directories for testing data and output files:
 
 ```
-mkdir bgc-processing-data
+mkdir -p bgc-processing-data/pjm bgc-processing-data/matlab bgc-processing-data/netCDF
 mkdir testing-data
 ```
 
@@ -46,9 +46,9 @@ docker compose exec postgres restore bgc-db.sql.gz
 docker compose down
 ```
 
-## How to update with git
+## How to update with Git
 
-To update your local code with the latest changes in the the Git repositories, you need to update both the parent repository and the submodules.
+To update your local code with the latest changes in the the Github repositories, you need to update both the parent repository and the submodules.
 Run the following commands from the parent repository directory to update all the repos:
 
 ```
