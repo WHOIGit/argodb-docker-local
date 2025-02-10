@@ -46,6 +46,16 @@ docker compose exec postgres restore bgc-db.sql.gz
 docker compose down
 ```
 
+## How to update with git
+
+To update your local code with the latest changes in the the Git repositories, you need to update both the parent repository and the submodules.
+Run the following commands from the parent repository directory to update all the repos:
+
+```
+git pull
+git submodule update --rebase --remote
+```
+
 ## How to use the Django application
 
 1. `cd` into the `argodb-docker-local` repo directory
