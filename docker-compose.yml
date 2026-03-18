@@ -45,5 +45,6 @@ services:
       - ./bgc-processing:/app
       - ./bgc-processing-data:/home/bgc_processing/bgc-processing/data
       - ./testing-data:/home/testing-data
+      - ./bgc-processing-logs:/home/bgc_processing/logs/process
     env_file:
       - ./bgc-processing/.env.local

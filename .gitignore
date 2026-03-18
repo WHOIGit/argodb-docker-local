@@ -2,3 +2,4 @@ bgc-processing-data/
 testing-data/
 .DS_Store
 bgc-db.sql.gz
+bgc-processing-logs/
