@@ -26,7 +26,7 @@ services:
     image: argodb_postgres
     container_name: postgres
     volumes:
-      - local_postgres_data:/var/lib/postgresql/data
+      - local_postgres_data:/var/lib/postgresql
       - local_postgres_data_backups:/backups
     env_file:
       - ./argo-db-backend/.env.local
